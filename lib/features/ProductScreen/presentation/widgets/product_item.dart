@@ -82,62 +82,71 @@ class ProductItem extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 8.w),
-                      child: Text(
-                        data?.description?? " ",
-                      //  productModel?.data?[index].description ?? " ",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 8.w),
+                        child: Text(
+                          data?.description?? " ",
+                        //  productModel?.data?[index].description ?? " ",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: 8.h,
                     ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 8.w,
-                        ),
-                        Text("Egp ${data?.price?? " "}"),
-                        SizedBox(
-                          width: 16.w,
-                        ),
-                        const Text("EGP 1200"),
-                      ],
+                    Expanded(
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 8.w,
+                          ),
+                          Text("EGP ${data?.price?? " "}"),
+                          SizedBox(
+                            width: 16.w,
+                          ),
+                          const Text("EGP 1200"),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 5.h,
                     ),
-                    const Spacer(),
+                    // const Spacer(),
                     Padding(
                       padding: EdgeInsets.only(left: 8.w, bottom: 13,right: 8.w),
-                      child: Row(
-                        children: [
-                          const Text("Review"),
-                          SizedBox(
-                            width: 4.w,
-                          ),
-                          Text(data?.rating.toString() ?? " "),
-                          SizedBox(
-                            width: 4.w,
-                          ),
-                          const Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                          ),
-                          const Spacer(),
-                          Container(
-                            padding: EdgeInsets.all(5.w.h),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15.r),
-                              color: AppColors.blueColor,
+                      child: Expanded(
+                        child: Row(
+                          children: [
+                            const Text("Review"),
+                            SizedBox(
+                              width: 4.w,
                             ),
-                            child: const Icon(Icons.add,color: Colors.white,),
-                          ),
-                        ],
+                            Text("(${data?.rating.toString() ?? " "})"),
+                            SizedBox(
+                              width: 4.w,
+                            ),
+                            const Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                            ),
+                            const Spacer(),
+                            Container(
+                              padding: EdgeInsets.all(5.w.h),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15.r),
+                                color: AppColors.blueColor,
+                              ),
+                              child: const Icon(Icons.add,color: Colors.white,),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
+                    // SizedBox(
+                    //   height: 20.h,
+                    // ),
                   ],
                 ),
               ),
