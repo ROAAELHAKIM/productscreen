@@ -7,6 +7,7 @@ import 'package:productscreen/features/ProductScreen/domain/repositories/Product
 @Injectable(as: ProductRepo)
 class ProductRepoImpl implements ProductRepo{
   ProductDs ds;
+
   ProductRepoImpl(this.ds);
 
   @override
